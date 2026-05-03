@@ -1,0 +1,251 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #111827;
+  --primary-hover: #000000;
+  --accent: #2563eb;
+  --danger: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 40px;
+  display: grid;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.intro,
+.empty,
+.summary-box p,
+.comment-card p,
+.message {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.actions,
+.controls,
+.comment-top {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.diff-input {
+  width: 100%;
+  min-height: 320px;
+  padding: 14px;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fafafa;
+  color: var(--text);
+  line-height: 1.65;
+  font-family: Consolas, Monaco, 'Liberation Mono', monospace;
+}
+
+.diff-input:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.2);
+  border-color: var(--accent);
+}
+
+.input-row {
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.file-picker {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.file-picker input {
+  display: none;
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.secondary-button {
+  background: #fff;
+  color: var(--text);
+}
+
+.ghost-button {
+  background: #fff;
+  color: var(--text);
+}
+
+.file-picker span {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  background: #fff;
+  color: var(--text);
+  display: inline-block;
+}
+
+.primary-button:hover {
+  background: var(--primary-hover);
+}
+
+.secondary-button:hover,
+.ghost-button:hover,
+.file-picker span:hover {
+  background: #f3f4f6;
+}
+
+.primary-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.result-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.result-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.summary-box,
+.comment-card,
+.message {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.summary-box,
+.comment-card {
+  padding: 14px;
+}
+
+.summary-box strong,
+.result-panel > strong,
+.comment-card strong {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.comment-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.comment-top {
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.severity {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.comment-card pre {
+  margin: 12px 0 0;
+  overflow-x: auto;
+  padding: 12px;
+  border-radius: 10px;
+  background: #111827;
+  color: #e5e7eb;
+  font-family: Consolas, Monaco, 'Liberation Mono', monospace;
+  font-size: 0.92rem;
+}
+
+.message {
+  margin-top: 12px;
+  padding: 12px 14px;
+}
+
+.message.error {
+  color: var(--danger);
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+@media (max-width: 960px) {
+  .controls {
+    align-items: stretch;
+  }
+
+  .controls > * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 16px 12px 24px;
+  }
+}
